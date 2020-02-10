@@ -13,7 +13,7 @@ def Order_list(request):
     info = DesireInfo.objects.all()
     return render(request, 'Order_list.html', {
         'info': info
-    })
+    })  
 
 
 

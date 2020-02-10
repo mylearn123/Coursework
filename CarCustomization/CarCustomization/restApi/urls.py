@@ -1,9 +1,7 @@
-from django.contrib import admin
-from .views import *
 from django.urls import path
-
+from .views import *
 
 urlpatterns = [
-    path('',hello)
-
+    path('customer/',view_get_post_customerList),
+    path('customer/<int:ID>',view_getByID_updateByID_deleteByID),
 ]

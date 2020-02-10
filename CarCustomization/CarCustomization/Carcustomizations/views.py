@@ -7,8 +7,25 @@ from django.contrib.auth.models import User,auth,Permission
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout,get_user_model
 from django.contrib.auth.decorators import login_required
+
 from django.contrib.contenttypes.models import ContentType
 from django.shortcuts import get_object_or_404
+
+#content_type = ContentType.objects.get_for_model(Customerlist)
+#permission = Permission.objects.create(
+   # codename='view_desireinfo',
+   # name='Can view desire info',
+    #content_type=content_type,
+# def userPermission(request,user_id):
+# #    user = User.objects.get()
+#    user = User.objects.get(id=1)
+#    user.has_perm('Carcustomizations.add_Customerlist')
+#    content_type = ContentType.objects.get_for_model(CarCustomization)
+#    permissions = Permission.objects.get( codename='add_customerlist', content_type=content_type)
+#    user.user_permissions.add(permissions)
+#    user.has_perm('CarCustomization.add_Customerlist')
+#    user = get_object_or_404(User, pk=1)
+#    user.has_perm('Carcustomizations.add_Customerlist')
 
 
 from Carcustomizations.forms import LoginForm,RegisterForm
@@ -17,6 +34,9 @@ from Carcustomizations.forms import LoginForm,RegisterForm
 def home(request):
  
     return render(request,'index.html')
+
+def order_list(request):
+    return render(request,'base.html')
 
 
 
@@ -37,7 +57,7 @@ def login_page(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/')
+            return redirect('Order_list')
         else:
             print("error.......")
             messages.error(request,"Invalid username")
@@ -71,7 +91,3 @@ def search(request):
   
     return render(request,'search.html',params)
 
-
- 
- 
-    

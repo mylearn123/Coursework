@@ -23,7 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Carcustomizations.urls')),
     path('',include('CustomerInfo.urls')),
-    path('Lists/',include('Api.urls'))
 
        
 

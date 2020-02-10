@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'Carcustomizations',
     'CustomerInfo',
     'crispy_forms',
-    'Api',
 ]
 
 MIDDLEWARE = [
